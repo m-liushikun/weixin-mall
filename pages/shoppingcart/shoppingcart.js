@@ -138,8 +138,6 @@ Page({
         var EcheckTrue = "cartList[" + i +"].checks.checks"
         var EcheckFalse = "cartList[" + i + "].checks"
         if (this.data.cartList[i].checks == "checks:true"){
-          console.log("*****************")
-          
           this.setData({
             [EcheckFalse]: {}
           })
