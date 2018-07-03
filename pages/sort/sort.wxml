@@ -1,0 +1,57 @@
+	<view class="sort1 ">
+		 <view type="flex" justify="space-between" class="code-row-bg">
+	       <view class='sortNav'><text>综合</text></view>
+	       <view class='sortNav'><text>销量</text></view>
+	       <view class='sortNav'><text>价格</text></view>
+	       <view class='sortNav' bindtap="show"><text>筛选</text></view>
+   	</view>
+   	<view class="demo-spin-view"  v-else  style="top:82px">
+		    <scroll-view class='scroll' :on-reach-bottom="handleReachBottom"  :height='scrollheight'>
+					    <view   class="spdetail"  wx:for="{{productList}}" wx:for-index="index"  id='{{item.id}}'>
+                  <navigator class="bury-wrapper wx-li" url="../sortDetail/sortDetail?id={{item.id}}"> 
+
+                      <view class='listImg'><image class='img' src='{{item.model_img}}'></image></view>
+                      <view class="right">	
+                        <view class="sP">{{item.model_name}}</view>
+                        <view class="font-14">{{item.model_no}}</view>
+                        <view >
+                          <text v-if="item.promotionTitle !=null" class="promotion">{{item.promotionTitle}}</text>
+                          <text v-else></text>
+                        </view>
+                        <view class="sh6">{{item.sale_price}}</view>
+                      </view>
+                  </navigator>
+					    </view>
+					    <view class="center">{{bottomtext}}</view>
+			  </scroll-view>
+		</view>
+  <view class="modal-box" hidden="{{flag}}" catchtouchmove="preventTouchMove">
+    <scroll-view class='scroll' :on-reach-bottom="handleReachBottommodal"  :height='scrollheightmodal'>
+      <view class="modal-body">
+        <view class="modal-content">
+            <view class='modal-title'>筛选条件</view>
+            <view class="filter-tj">	
+              <view class='listFilter'>
+                <view class='listFilterArrow'>类型</view>
+                <view class='listFilterKey {{catalogNameDeflaut? "seleted":""}}' bindtap="catalogName" data-key='-1' >全部</view> 
+                <view class='listFilterKey {{item.seleted ? "seleted":""}}' bindtap="catalogName"  wx:for="{{catalog}}" data-key='{{index}}'  data-id='{{item.id}}' wx:for-index="index">{{item.catalogName}}</view>
+              </view>
+              <view class='listFilter'>
+                <view class='listFilterArrow '>系列</view>
+                <view class='listFilterKey {{seriesNameDeflaut? "seleted":""}}' bindtap='seriesName' data-key='-1' >全部</view>
+                <view class='listFilterKey {{item.seleted ? "seleted":""}}' wx:for="{{series}}" wx:for-index="index"  bindtap='seriesName' data-key='{{index}}'>{{item.seriesName}} </view>
+              </view>
+              <view class='listFilter'>
+                <view class='listFilterArrow '>品牌</view>
+                <view class='listFilterKey {{brandNameDeflaut? "seleted":""}}'  bindtap='brandName' data-key='-1'>全部</view>
+                <view class='listFilterKey {{item.seleted ? "seleted":""}}' wx:for="{{brand}}" wx:for-index="index" bindtap='brandName' data-key='{{index}}'>{{item.brandName}}</view>
+              </view>
+            </view>
+            <view class="knowBtn" >
+              <button class='hideBtn' bindtap="hide">搜索</button>
+            </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

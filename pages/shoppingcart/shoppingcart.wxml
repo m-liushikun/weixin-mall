@@ -1,0 +1,61 @@
+
+<view class='cart1'>
+		<!-- <view class="m_header_bar">
+			<span  @click="edit" v-show="editface" class="m_header_bar_menu" v-if="cartList.length>0">编辑</span>
+			<span  @click="edit" v-show="!editface"  class="m_header_bar_menu">完成</span>
+		</view> -->
+		<view wx:if="cartList.length>0">
+		<view class="P15">
+      <view  class='cartCol' span="24" wx:for="{{cartList}}"  wx:for-index="index">
+        <checkbox-group bindchange="checkboxChange" data-index="{{index}}" data-checks="{{item.checks.checks}}">
+        			<view class='cartcheckbok' span="2">
+        			<checkbox  value="{{item.id}}"  checked="{{item.checks}}" ></checkbox></view>
+					<view class='cartImage' ><image class='cartImg' mode="widthFix" src="{{imageSrc}}{{item.image}}"></image></view>
+					<view class='cartDetail'>
+						<view class='cart_black'>{{item.productName}}</view>
+						<view class='cart_gray'>{{item.productAttr}}</view>
+						<view><label wx:if="item.promotionTitle !=null" class="promotion">{{item.promotionTitle}}</label></view>
+						<view class='cart_price'>
+							￥{{item.salePrice |pricefilter}}
+							<view class="min-add">
+						    	<button type="minus-round"  bindtap="jian(x,index)" class="min"  >-</button>
+						     	 <input class="text-box" name="pricenum"  type="text" value='{{item.quantity}}'  v-on:blur="changeNumber($event,x,index)" placeholder="1" data-max="50" />
+						 		 <button type="plus-round" bindtap="jia(x,index)" class="add">+</button>
+							</view>
+						</view>
+					</view>
+        </checkbox-group>
+      </view>
+		</view>
+			<view class='cartfoot'>
+				<view>
+					<view  class='cartCol' span="24">
+						<view  span="6" class="center">
+									<checkbox  checked='{{handleCheckAll.checks}}'   bindtap="handleCheckAll">全选</checkbox>
+						</view>
+							<view class='color-dx'>总计：￥{{totalPrice |pricefilter}}</view>
+						<view class='cartButton1' span="8">
+							<button class='cartButton'  bindtap="paymoney"  v-show="editface">
+								结算({{zslcount}})
+							</button>
+							 <button   bindtap="remove" v-show="!editface" class="btn-del">删除</button>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view size="large" fix v-if="spinShow"></view>
+			</view>
+			<!-- <view class="cart-empty"   v-if="!nologin&&cartList.length==0">
+			<img src="../../../assets/img/cartempty.png">
+			<p>购物车是空的</p>
+			<br/>
+			<router-link to="/index"  >去首页</router-link>
+			</view>
+				<view class="cart-empty" v-if="nologin" >
+			<img src="../../../assets/img/cartempty.png">
+			<p>登录后可同步购物车中商品</p>
+			<br/>
+			<router-link to="/login"  > <button class="ghost-dx">登录</button></router-link>
+			</view> -->
+			<!--加载中-->
+	</view>

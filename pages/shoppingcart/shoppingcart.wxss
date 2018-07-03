@@ -1,0 +1,130 @@
+.cart1 .cartCol{
+  overflow: hidden;
+}
+
+.cart1 .cartcheckbok{
+  width:8%;
+  float: left;
+}
+.cart1 .cartcheckbok checkbox{ 
+  width: 14px;
+  height: 14px;
+  padding-left: 15px;
+    transform:scale(0.5);
+}
+.cart1 .cartImage{
+  width:16%;
+  float: left;
+}
+.cart1 .cartImg{
+  width: 90%;
+}
+.cart1 .cartDetail{
+  width: 76%;
+  float: left;
+  font-size: 16px;
+}
+.cart1 .cart_black{
+  font-size: 16px;
+  height: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cart1 .cart_gray{
+    text-align: left;
+    color: #999;
+    font-size: 12px;
+}
+.cart1 .cart_price{
+      margin-top: 5px;
+    color: #0099ff;
+}
+.cart1 .min-add{
+  float: right;
+  padding-right: 20px;
+}
+.cart1 .min{
+  float: left;
+  width: 20px;
+  height: 26px;
+  line-height: 26px;
+      color: #333;
+    font-weight: bold;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 14px;
+    margin-left: 3px;
+}
+.cart1 .add{
+  float: left;
+  width: 20px;
+  height: 26px;
+  line-height: 26px;
+      color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #fff;
+    margin-right: 5px;
+    font-size: 14px;
+    /* margin-left: 3px; */
+}
+.cart1 .min::after , .cart1 .add::after{
+  border: none;
+}
+.cart1 .text-box{
+  float: left;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+    background: #f5f5f5;
+    border: 0 none;
+    height: 26px;
+    color: #333;
+}
+.cart1 .cartfoot{
+  overflow: hidden;
+    background: #fff;
+    border-top: 1px solid #eee;
+    position: fixed;
+    height: 60px;
+    line-height: 60px;
+    z-index: 31;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    font-size: 16px;
+}
+.cart1 .cartfoot .center{
+  float: left;
+}
+.cart1 .cartfoot .center checkbox{
+    transform:scale(0.6);
+}
+.cart1 .cartCol .color-dx{
+    color: #0099ff;
+    text-align: left;
+    float: left;
+}
+.cart1 .cartButton1{
+  float: right;
+}
+.cart1 .cartButton1 button{
+  float: right;
+  height: 60px;
+  line-height: 60px;
+  width: 100px;
+  border: none;
+  border-radius: 0px;
+}
+.cart1 .cartButton1 button::after{
+  border: none;
+}
+.cartButton{
+  background-color: #0099ff;
+  color: #fff;
+}
+.btn-del{
+  background-color: rgb(226, 24, 24);
+  color: #fff;
+}
